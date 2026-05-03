@@ -1,0 +1,359 @@
+.panier-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .panier-container h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #222;
+  }
+  
+  .panier-vide {
+    background-color: white;
+    border-radius: 12px;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .panier-vide p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 24px;
+  }
+  
+  .panier-content {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+  }
+  
+  /* ===== ITEMS ===== */
+  .panier-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .panier-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  .panier-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+  
+  .item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  
+  .item-info {
+    flex-grow: 1;
+    min-width: 0;
+  }
+  
+  .item-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #222;
+  }
+  
+  .item-categorie {
+    font-size: 13px;
+    color: #999;
+    margin: 0 0 8px 0;
+  }
+  
+  .item-prix {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0066ff;
+    margin: 0;
+  }
+  
+  .item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .quantite-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #f5f5f5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .quantite-controls button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.2s ease;
+  }
+  
+  .quantite-controls button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .quantite-controls span {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .btn-supprimer {
+    background-color: #fff5f5;
+    color: #e74c3c;
+    border: 1px solid #ffcccc;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  
+  .btn-supprimer:hover {
+    background-color: #ffe6e6;
+    border-color: #ff9999;
+  }
+  
+  .item-total {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0066ff;
+    min-width: 100px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  
+  /* ===== RESUME ===== */
+  .panier-resume {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+  }
+  
+  .panier-resume h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    color: #222;
+  }
+  
+  .resume-ligne {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .resume-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    padding: 16px 0 20px 0;
+    margin-bottom: 16px;
+    border-top: 2px solid #f0f0f0;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  .resume-total span:last-child {
+    color: #0066ff;
+  }
+  
+  .btn-commander {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .btn-commander:hover {
+    background-color: #0052cc;
+  }
+  
+  .btn-commander:active {
+    transform: scale(0.98);
+  }
+  
+  .btn-vider {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #f5f5f5;
+    color: #666;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+  }
+  
+  .btn-vider:hover {
+    background-color: #efefef;
+    border-color: #d0d0d0;
+  }
+  
+  .btn-continuer {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: white;
+    color: #0066ff;
+    border: 1px solid #0066ff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-continuer:hover {
+    background-color: #f0f5ff;
+  }
+  
+  .btn-catalogue {
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-catalogue:hover {
+    background-color: #0052cc;
+  }
+  
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .panier-container {
+      padding: 24px 16px;
+    }
+  
+    .panier-container h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    .panier-content {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .panier-resume {
+      position: static;
+    }
+  
+    .panier-item {
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px;
+    }
+  
+    .item-image {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .item-info {
+      flex: 1 1 auto;
+      min-width: 150px;
+    }
+  
+    .item-actions {
+      flex: 1 1 auto;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    .item-total {
+      width: 100%;
+      text-align: right;
+      margin-top: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .panier-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .item-image {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .item-actions {
+      width: 100%;
+    }
+  
+    .item-total {
+      width: 100%;
+    }
+  
+    .quantite-controls {
+      justify-self: center;
+    }
+  
+    .panier-resume {
+      padding: 20px;
+    }
+  
+    .btn-commander,
+    .btn-vider,
+    .btn-continuer {
+      font-size: 13px;
+      padding: 11px 14px;
+    }
+  }
