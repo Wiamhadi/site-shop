@@ -1,0 +1,56 @@
+stages:
+  - test
+  - build
+  - deploy
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - frontend/node_modules/
+
+.default_node_job: &default_node_job
+  image: node:22
+  before_script:
+    - cd frontend
+    - npm install
+
+test:vitest:
+  <<: *default_node_job
+  stage: test
+  script:
+    - npm run test:run -- --coverage
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)%/'
+  artifacts:
+    when: always
+    paths:
+      - frontend/coverage/
+    expire_in: 7 days
+  only:
+    - main
+    - merge_requests
+
+build:frontend:
+  <<: *default_node_job
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - frontend/dist/
+    expire_in: 1 day
+  only:
+    - main
+
+pages:
+  <<: *default_node_job
+  stage: deploy
+  script:
+    - npm run build
+    - mkdir -p ../public
+    - cp -r dist/* ../public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - main
