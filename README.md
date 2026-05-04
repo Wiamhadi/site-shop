@@ -1,16 +1,67 @@
-# React + Vite
+# 🛍️ Application E-CommerceApplication
+ e-commerce complète développée avec **React.js** (frontend) et API backend (Node.js / Express).
+ 
+ ---## 📁 Structure du projet SHOP/
+├── frontend/               # Application React (Vite)
+│   ├── src/
+│   │   ├── pages/          # Pages principales (Connexion, Inscription, Catalogue, etc.)
+│   │   ├── Styles/         # Fichiers CSS
+│   │   ├── contexte/       # Context API (User, Panier)
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── test/               # Tests (Vitest)
+│   │   ├── connexion.test.jsx
+│   │   └── inscription.test.jsx
+│   │
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/                # 
+│   ├── routes/
+│   ├── models/
+│   ├── server.js
+│   └── package.json
+│
+└── .gitlab-ci.yml          # Pipeline GitLab CI/CD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Fonctionnalités
 
-Currently, two official plugins are available:
+- ✅ Inscription avec validation stricte du mot de passe
+- ✅ Connexion avec système anti-brute-force (5 tentatives)
+- ✅ Catalogue de produits
+- ✅ Panier d'achat avec gestion des quantités
+- ✅ Contextes React (User, Panier)
+- ✅ Tests unitaires complets
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+##  Tests
 
-## React Compiler
+Le projet utilise **Vitest** avec **React Testing Library**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Tests d'inscription (validation mot de passe)
+- Tests de connexion (anti-brute-force)
+- Pipeline CI/CD GitLab exécute automatiquement les tests
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Installation ###
+
+  Frontend
+ ``bash
+ cd frontend
+ npm install
+ npm run dev
+
+➡️ L'application démarre sur :
+http://localhost:5173
+
+##  Base de données
+
+- **MongoDB** : Base de données locale ou MongoDB Atlas
+- **Collections** :
+  - `users` : Utilisateurs inscrits
+  - `produits` : Catalogue produits
+
+##  Auteur
+
+Radouani Wiam
